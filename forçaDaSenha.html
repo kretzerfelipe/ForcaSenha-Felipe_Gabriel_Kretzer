@@ -31,11 +31,8 @@
                 if (senha.length >= 14) {
                     pontos ++
                 }
-                for (let i = 0; i <= 9; i++) {
-                    if (senha.includes(i)) {
-                        pontos ++
-                        break
-                    } 
+                if (/[0-9]/.test(senha)) {
+                    pontos ++
                 }
                 if (/[A-Z]/.test(senha)) {
                     pontos ++
