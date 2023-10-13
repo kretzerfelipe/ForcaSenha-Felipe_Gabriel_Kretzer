@@ -1,28 +1,89 @@
 <!DOCTYPE html>
     <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <input type="password" id="idSenha" name="nmSenha">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+            
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
-        <input type="checkbox"  id="idMostrarSenha">
-        <label for="idMostrarSenha">Mostrar Senha</label><br><br>
+                    .corDeFundo {
+                        background-color: rgb(26, 26, 26);
+                        height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    #idCard {
+                        border-top-right-radius: 10%;
+                        border-top-left-radius: 10%;
+                        border-bottom: 10px;
+                        border-right: 0;
+                        border-left: 0;
+                        border-top: 0;
+                        border-style: solid;
+                        border-color: #ff0000;
+                    }
+                    .card {
+                        background-color: rgb(70, 70, 70);
+                        text-align: center;
+                        padding: 5%;
+                        padding-top: 2%;
+                        padding-bottom: 1%;
+                        
+                    }
 
-        <script>
+                    .text {
+                        color: rgb(94, 94, 94);
+                        font-family: 'Ubuntu', sans-serif;
+                    }
+
+                    .textSenha {
+                        color: #ff0000;
+                        font-family: 'Ubuntu', sans-serif;
+                    }
+
+                    .textTítulo {
+                        color: rgb(255, 255, 255);
+                        font-family: 'Ubuntu', sans-serif;
+                        font-size: 2rem;
+                        
+                    }
+
+
+                </style>
+            </head>
+            <body class="corDeFundo">
+                <div class="card" id="idCard">
+                    <div class="textTítulo">
+                        <p>VERIFICADOR DE <br> FORÇA DE SENHA</p>
+                    </div>
+                    <div class="center">
+                        <input type="password" id="idSenha" name="nmSenha" placeholder="Digite sua senha:">
+                        <input type="button" id="idMostrarSenha" value="MOSTRAR"><br><br>
+                    </div>
+                    <div class="center">
+                        <output id="idOut" class="textSenha">Senha fraca.</output>
+                    </div>
+                </div>
+            </body>
+            <script>
             // CheckBox para ocultar senha
             var mostrarSenha = document.querySelector("#idMostrarSenha")
 
-            mostrarSenha.addEventListener("change", tratamentoMostrarSenha)
+            mostrarSenha.addEventListener("click", tratamentoMostrarSenha)
 
             function tratamentoMostrarSenha() {
                 let inSenha = document.getElementById("idSenha")
+                let botão = document.getElementById("idMostrarSenha")
                 if (inSenha.type == "password") {
                     inSenha.type = "text"
+                    botão.value = "ESCONDER"
                 } else {
                     inSenha.type = "password"
+                    botão.value = "MOSTRAR"
                 }
             }
 
@@ -33,7 +94,10 @@
 
             function tratamentoInputSenha() {
                 const senha = document.querySelector("#idSenha").value
+                let forçaDaSenha = "Senha "
                 let pontos = 0
+
+                // Pontuação
                 if (senha.length > 0) {
                     pontos ++
                 }
@@ -63,6 +127,37 @@
                 }
                 console.log(senha)
                 console.log(pontos)
+
+                // Força da Senha
+                if (pontos <= 5) {
+                    forçaDaSenha += "fraca."
+                } else if (pontos > 5 && pontos < 9) {
+                    forçaDaSenha += "moderada."
+                } else if (pontos >= 9) {
+                    forçaDaSenha += "forte."
+                }
+                document.querySelector("#idOut").innerText = forçaDaSenha
+
+                // Cor de Senha 
+                if (pontos == 0 || pontos == 1) {
+                    document.querySelector("#idOut").style.color = "#ff0000"
+                    document.querySelector("#idCard").style.borderColor = "#ff0000"
+                } else if (pontos == 2 || pontos == 3) {
+                    document.querySelector("#idOut").style.color = "#ff8700"
+                    document.querySelector("#idCard").style.borderColor = "#ff8700"
+                } else if (pontos == 4 || pontos == 5) {
+                    document.querySelector("#idOut").style.color = "#ffd300"
+                    document.querySelector("#idCard").style.borderColor = "#ffd300"
+                } else if (pontos == 6 || pontos == 7) {
+                    document.querySelector("#idOut").style.color = "#deff0a"
+                    document.querySelector("#idCard").style.borderColor = "#deff0a"
+                } else if (pontos == 8 || pontos == 9) {
+                    document.querySelector("#idOut").style.color = "#a1ff0a"
+                    document.querySelector("#idCard").style.borderColor = "#a1ff0a"
+                } else if (pontos == 10) {
+                    document .querySelector("#idOut").style.color = "#0aff99"
+                    document .querySelector("#idCard").style.borderColor = "#0aff99"
+                }
             }
             </script>
         </body>
