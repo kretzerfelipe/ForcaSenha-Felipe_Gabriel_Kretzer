@@ -6,9 +6,27 @@
         <title>Document</title>
     </head>
     <body>
-        <input type="text" id="idSenha" name="nmSenha">
+        <input type="password" id="idSenha" name="nmSenha">
+
+        <input type="checkbox"  id="idMostrarSenha">
+        <label for="idMostrarSenha">Mostrar Senha</label><br><br>
 
         <script>
+            // CheckBox para ocultar senha
+            var mostrarSenha = document.querySelector("#idMostrarSenha")
+
+            mostrarSenha.addEventListener("change", tratamentoMostrarSenha)
+
+            function tratamentoMostrarSenha() {
+                let inSenha = document.getElementById("idSenha")
+                if (inSenha.type == "password") {
+                    inSenha.type = "text"
+                } else {
+                    inSenha.type = "password"
+                }
+            }
+
+            // Pontuação da senha
             var inputSenha = document.querySelector("#idSenha")
 
             inputSenha.addEventListener("input", tratamentoInputSenha)
@@ -46,6 +64,6 @@
                 console.log(senha)
                 console.log(pontos)
             }
-        </script>
-    </body>
-</html>
+            </script>
+        </body>
+    </html>
