@@ -25,6 +25,7 @@
                         border-top: 0;
                         border-style: solid;
                         border-color: #ff0000;
+                        box-shadow: 0 0 10px 10px #ff0000;
                     }
                     .card {
                         background-color: rgb(70, 70, 70);
@@ -32,7 +33,6 @@
                         padding: 5%;
                         padding-top: 2%;
                         padding-bottom: 1%;
-                        
                     }
 
                     .text {
@@ -142,21 +142,27 @@
                 if (pontos == 0 || pontos == 1) {
                     document.querySelector("#idOut").style.color = "#ff0000"
                     document.querySelector("#idCard").style.borderColor = "#ff0000"
+                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #ff0000"
                 } else if (pontos == 2 || pontos == 3) {
                     document.querySelector("#idOut").style.color = "#ff8700"
                     document.querySelector("#idCard").style.borderColor = "#ff8700"
+                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #ff8700"
                 } else if (pontos == 4 || pontos == 5) {
                     document.querySelector("#idOut").style.color = "#ffd300"
                     document.querySelector("#idCard").style.borderColor = "#ffd300"
+                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #ffd300"
                 } else if (pontos == 6 || pontos == 7) {
                     document.querySelector("#idOut").style.color = "#deff0a"
                     document.querySelector("#idCard").style.borderColor = "#deff0a"
+                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #deff0a"
                 } else if (pontos == 8 || pontos == 9) {
                     document.querySelector("#idOut").style.color = "#a1ff0a"
                     document.querySelector("#idCard").style.borderColor = "#a1ff0a"
+                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #a1ff0a"
                 } else if (pontos == 10) {
-                    document .querySelector("#idOut").style.color = "#0aff99"
-                    document .querySelector("#idCard").style.borderColor = "#0aff99"
+                    document.querySelector("#idOut").style.color = "#0aff99"
+                    document.querySelector("#idCard").style.borderColor = "#0aff99"
+                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #0aff99"
                 }
             }
             </script>
