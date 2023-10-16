@@ -7,7 +7,7 @@
             
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
-
+                
                     .corDeFundo {
                         background-color: rgb(26, 26, 26);
                         height: 100vh;
@@ -34,25 +34,46 @@
                         padding-top: 2%;
                         padding-bottom: 1%;
                     }
-
+                
                     .text {
                         color: rgb(94, 94, 94);
                         font-family: 'Ubuntu', sans-serif;
                     }
-
+                
                     .textSenha {
                         color: #ff0000;
                         font-family: 'Ubuntu', sans-serif;
+                        font-size: 1.5rem;
                     }
-
+                
                     .textTítulo {
                         color: rgb(255, 255, 255);
                         font-family: 'Ubuntu', sans-serif;
                         font-size: 2rem;
                         
                     }
-
-
+                
+                    .inputs-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 5%;
+                    }
+                
+                    .textoEBotão {
+                        background-color: rgb(70, 70, 70);
+                        color: rgb(193, 193, 193);
+                        font-family: 'Ubuntu', sans-serif;
+                        padding: 1%;
+                        border: 2px solid rgb(182, 182, 182);
+                        font-size: 1.2rem;
+                        margin: 5px;
+                    }
+                
+                    .textoEBotão:hover {
+                        transform: scale(1.02);
+                    }
+                
                 </style>
             </head>
             <body class="corDeFundo">
@@ -60,11 +81,11 @@
                     <div class="textTítulo">
                         <p>VERIFICADOR DE <br> FORÇA DE SENHA</p>
                     </div>
-                    <div class="center">
-                        <input type="password" id="idSenha" name="nmSenha" placeholder="Digite sua senha:">
-                        <input type="button" id="idMostrarSenha" value="MOSTRAR"><br><br>
+                    <div class="inputs-container">
+                        <input type="password" id="idSenha" name="nmSenha" placeholder="Digite sua senha:" class="textoEBotão">
+                        <input type="button" id="idMostrarSenha" value="MOSTRAR" class="textoEBotão">
                     </div>
-                    <div class="center">
+                    <div>
                         <output id="idOut" class="textSenha">Senha fraca.</output>
                     </div>
                 </div>
