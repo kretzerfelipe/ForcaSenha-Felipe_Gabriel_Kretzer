@@ -1,191 +1,264 @@
-<!DOCTYPE html>
-    <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
+<!DOCTYPE html><html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+            .corDeFundo {
+                background-color: rgb(26, 26, 26);
+                height: 100vh;
+            }
+
+            .flex {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card {
+                background-color: rgb(70, 70, 70);
+                text-align: center;
+                padding: 5%;
+                padding-top: 2%;
+                padding-bottom: 1%;
+                margin-bottom: 0;
+            }
+
+            .text {
+                color: rgb(94, 94, 94);
+                font-family: 'Ubuntu', sans-serif;
+            }
+
+            .textSenha {
+                color: #ff0000;
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 1.5rem;
+                filter: drop-shadow(0 0 2px #ff0000);
+                transition: 0.5s ease;
+            }
+
+            .textTítulo {
+                color: rgb(255, 255, 255);
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 2rem;
+            }
+
+            .inputs-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5%;
+            }
+
+            .textoEBotão {
+                background-color: rgb(70, 70, 70);
+                color: rgb(193, 193, 193);
+                font-family: 'Ubuntu', sans-serif;
+                padding: 1%;
+                border: 2px solid rgb(182, 182, 182);
+                font-size: 1.2rem;
+                margin: 5px;
+            }
+
+            .textoEBotão:hover {
+                transform: scale(1.02);
+            }
+
+            #idBarra {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .border {
+                border: 1px solid css;
+                width: 30.9%;
+                height: 5px;
+            }
+
+            .cores {
+                background-color: #ff0000;
+                height: 100%;
+                width: 0%;
+                transition: 0.5s ease;
+                filter: drop-shadow(0 0 5px red) drop-shadow(0 0 7px red);
+            }
             
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
-                
-                    .corDeFundo {
-                        background-color: rgb(26, 26, 26);
-                        height: 100vh;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    
-                    #idCard {
-                        border-top-right-radius: 10%;
-                        border-top-left-radius: 10%;
-                        border-bottom: 10px;
-                        border-right: 0;
-                        border-left: 0;
-                        border-top: 0;
-                        border-style: solid;
-                        border-color: #ff0000;
-                        box-shadow: 0 0 10px 10px #ff0000;
-                    }
-                    .card {
-                        background-color: rgb(70, 70, 70);
-                        text-align: center;
-                        padding: 5%;
-                        padding-top: 2%;
-                        padding-bottom: 1%;
-                    }
-                
-                    .text {
-                        color: rgb(94, 94, 94);
-                        font-family: 'Ubuntu', sans-serif;
-                    }
-                
-                    .textSenha {
-                        color: #ff0000;
-                        font-family: 'Ubuntu', sans-serif;
-                        font-size: 1.5rem;
-                    }
-                
-                    .textTítulo {
-                        color: rgb(255, 255, 255);
-                        font-family: 'Ubuntu', sans-serif;
-                        font-size: 2rem;
-                        
-                    }
-                
-                    .inputs-container {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        margin-bottom: 5%;
-                    }
-                
-                    .textoEBotão {
-                        background-color: rgb(70, 70, 70);
-                        color: rgb(193, 193, 193);
-                        font-family: 'Ubuntu', sans-serif;
-                        padding: 1%;
-                        border: 2px solid rgb(182, 182, 182);
-                        font-size: 1.2rem;
-                        margin: 5px;
-                    }
-                
-                    .textoEBotão:hover {
-                        transform: scale(1.02);
-                    }
-                
-                </style>
-            </head>
-            <body class="corDeFundo">
-                <div class="card" id="idCard">
-                    <div class="textTítulo">
-                        <p>VERIFICADOR DE <br> FORÇA DE SENHA</p>
-                    </div>
-                    <div class="inputs-container">
-                        <input type="password" id="idSenha" name="nmSenha" placeholder="Digite sua senha:" class="textoEBotão">
-                        <input type="button" id="idMostrarSenha" value="MOSTRAR" class="textoEBotão">
-                    </div>
-                    <div>
-                        <output id="idOut" class="textSenha">Senha fraca.</output>
-                    </div>
+        </style>
+    </head>
+
+    <body class="corDeFundo">
+        <div class="flex">
+            <div class="card" id="idCard">
+                <div class="textTítulo">
+                    <p>VERIFICADOR DE <br> FORÇA DE SENHA</p>
                 </div>
-            </body>
-            <script>
-            // CheckBox para ocultar senha
-            var mostrarSenha = document.querySelector("#idMostrarSenha")
+                <div class="inputs-container">
+                    <input type="password" id="idSenha" name="nmSenha" placeholder="Digite sua senha:" class="textoEBotão">
+                    <input type="button" id="idMostrarSenha" value="MOSTRAR" class="textoEBotão">
+                </div>
+                <div>
+                    <output id="idOut" class="textSenha">Senha fraca.</output>
+                </div>
+            </div>
+            <div class="border">
+                <div id="idShadow" class="cores"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        // CheckBox para ocultar senha
+        var mostrarSenha = document.querySelector("#idMostrarSenha")
 
-            mostrarSenha.addEventListener("click", tratamentoMostrarSenha)
+        mostrarSenha.addEventListener("click", tratamentoMostrarSenha)
 
-            function tratamentoMostrarSenha() {
-                let inSenha = document.getElementById("idSenha")
-                let botão = document.getElementById("idMostrarSenha")
-                if (inSenha.type == "password") {
-                    inSenha.type = "text"
-                    botão.value = "ESCONDER"
-                } else {
-                    inSenha.type = "password"
-                    botão.value = "MOSTRAR"
-                }
+        function tratamentoMostrarSenha() {
+            let inSenha = document.getElementById("idSenha")
+            let botão = document.getElementById("idMostrarSenha")
+            if (inSenha.type == "password") {
+                inSenha.type = "text"
+                botão.value = "ESCONDER"
+            } else {
+                inSenha.type = "password"
+                botão.value = "MOSTRAR"
             }
+        }
 
-            // Pontuação da senha
-            var inputSenha = document.querySelector("#idSenha")
+        // Pontuação da senha
+        var inputSenha = document.querySelector("#idSenha")
 
-            inputSenha.addEventListener("input", tratamentoInputSenha)
+        inputSenha.addEventListener("input", tratamentoInputSenha)
 
-            function tratamentoInputSenha() {
-                const senha = document.querySelector("#idSenha").value
-                let forçaDaSenha = "Senha "
-                let pontos = 0
+        function tratamentoInputSenha() {
+            const senha = document.querySelector("#idSenha").value
+            let forçaDaSenha = "Senha "
+            let pontos = 0
 
-                // Pontuação
-                if (senha.length > 0) {
-                    pontos ++
-                }
-                if (senha.length > 6) {
-                    pontos ++
-                }
-                if (senha.length >= 10) {
-                    pontos ++
-                }
-                if (senha.length >= 12) {
-                    pontos ++
-                }
-                if (senha.length >= 14) {
-                    pontos ++
-                }
-                if (/[0-9]/.test(senha)) {
-                    pontos ++
-                }
-                if (/[A-Z]/.test(senha)) {
-                    pontos ++
-                }
-                if (/[a-z]/.test(senha)) {
-                    pontos ++
-                }
-                if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(senha)) {
-                    pontos += 2
-                }
-                console.log(senha)
-                console.log(pontos)
-
-                // Força da Senha
-                if (pontos <= 5) {
-                    forçaDaSenha += "fraca."
-                } else if (pontos > 5 && pontos < 9) {
-                    forçaDaSenha += "moderada."
-                } else if (pontos >= 9) {
-                    forçaDaSenha += "forte."
-                }
-                document.querySelector("#idOut").innerText = forçaDaSenha
-
-                // Cor de Senha 
-                if (pontos == 0 || pontos == 1) {
-                    document.querySelector("#idOut").style.color = "#ff0000"
-                    document.querySelector("#idCard").style.borderColor = "#ff0000"
-                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #ff0000"
-                } else if (pontos == 2 || pontos == 3) {
-                    document.querySelector("#idOut").style.color = "#ff8700"
-                    document.querySelector("#idCard").style.borderColor = "#ff8700"
-                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #ff8700"
-                } else if (pontos == 4 || pontos == 5) {
-                    document.querySelector("#idOut").style.color = "#ffd300"
-                    document.querySelector("#idCard").style.borderColor = "#ffd300"
-                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #ffd300"
-                } else if (pontos == 6 || pontos == 7) {
-                    document.querySelector("#idOut").style.color = "#deff0a"
-                    document.querySelector("#idCard").style.borderColor = "#deff0a"
-                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #deff0a"
-                } else if (pontos == 8 || pontos == 9) {
-                    document.querySelector("#idOut").style.color = "#a1ff0a"
-                    document.querySelector("#idCard").style.borderColor = "#a1ff0a"
-                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #a1ff0a"
-                } else if (pontos == 10) {
-                    document.querySelector("#idOut").style.color = "#0aff99"
-                    document.querySelector("#idCard").style.borderColor = "#0aff99"
-                    document.querySelector("#idCard").style.boxShadow = "0 0 10px 10px #0aff99"
-                }
+            // Pontuação
+            if (senha.length > 0) {
+                pontos++
             }
-            </script>
-        </body>
-    </html>
+            if (senha.length > 6) {
+                pontos++
+            }
+            if (senha.length >= 10) {
+                pontos++
+            }
+            if (senha.length >= 12) {
+                pontos++
+            }
+            if (senha.length >= 14) {
+                pontos++
+            }
+            if (/[0-9]/.test(senha)) {
+                pontos++
+            }
+            if (/[A-Z]/.test(senha)) {
+                pontos++
+            }
+            if (/[a-z]/.test(senha)) {
+                pontos++
+            }
+            if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(senha)) {
+                pontos += 2
+            }
+            console.log(senha)
+            console.log(pontos)
+
+            // Força da Senha
+            if (pontos <= 5) {
+                forçaDaSenha += "fraca."
+            } else if (pontos > 5 && pontos < 9) {
+                forçaDaSenha += "moderada."
+            } else if (pontos >= 9) {
+                forçaDaSenha += "forte."
+            }
+            document.querySelector("#idOut").innerText = forçaDaSenha
+
+            // Cor de Senha 
+            if (pontos == 0) {
+                document.querySelector("#idOut").style.color = "#ff0000"
+                document.querySelector("#idShadow").style.backgroundColor = "#ff0000"
+                document.querySelector("#idShadow").style.width = "0%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #ff0000)"
+            }
+            else if (pontos == 1) {
+                document.querySelector("#idOut").style.color = "#ff0000"
+                document.querySelector("#idShadow").style.backgroundColor = "#ff0000"
+                document.querySelector("#idShadow").style.width = "10%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #ff0000)"
+            } 
+            else if (pontos == 2) {
+                document.querySelector("#idOut").style.color = "#ff8700"
+                document.querySelector("#idShadow").style.backgroundColor = "#ff8700"
+                document.querySelector("#idShadow").style.width = "20%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #ff8700) drop-shadow(0 0 10px #ff8700)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #ff8700)"
+            }
+            else if (pontos == 3) {
+                document.querySelector("#idOut").style.color = "#ff8700"
+                document.querySelector("#idShadow").style.backgroundColor = "#ff8700"
+                document.querySelector("#idShadow").style.width = "30%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #ff8700) drop-shadow(0 0 10px #ff8700)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #ff8700))"
+            }
+            else if (pontos == 4) {
+                document.querySelector("#idOut").style.color = "#ffd300"
+                document.querySelector("#idShadow").style.backgroundColor = "#ffd300"
+                document.querySelector("#idShadow").style.width = "40%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #ffd300) drop-shadow(0 0 10px #ffd300)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #ffd300))"
+            }
+            else if (pontos == 5) {
+                document.querySelector("#idOut").style.color = "#ffd300"
+                document.querySelector("#idShadow").style.backgroundColor = "#ffd300"
+                document.querySelector("#idShadow").style.width = "50%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #ffd300) drop-shadow(0 0 10px #ffd300)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #ffd300)"
+            }
+            else if (pontos == 6) {
+                document.querySelector("#idOut").style.color = "#deff0a"
+                document.querySelector("#idShadow").style.backgroundColor = "#deff0a"
+                document.querySelector("#idShadow").style.width = "60%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #deff0a) drop-shadow(0 0 10px #deff0a)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #deff0a)"
+            }
+            else if (pontos == 7) {
+                document.querySelector("#idOut").style.color = "#deff0a"
+                document.querySelector("#idShadow").style.backgroundColor = "#deff0a"
+                document.querySelector("#idShadow").style.width = "70%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #deff0a) drop-shadow(0 0 10px #deff0a)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #deff0a)"
+            }
+            else if (pontos == 8) {
+                document.querySelector("#idOut").style.color = "#a1ff0a"
+                document.querySelector("#idShadow").style.backgroundColor = "#a1ff0a"
+                document.querySelector("#idShadow").style.width = "80%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #a1ff0a) drop-shadow(0 0 10px #a1ff0a)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #a1ff0a)"
+            }
+            else if (pontos == 9) {
+                document.querySelector("#idOut").style.color = "#a1ff0a"
+                document.querySelector("#idShadow").style.backgroundColor = "#a1ff0a"
+                document.querySelector("#idShadow").style.width = "90%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #a1ff0a) drop-shadow(0 0 10px #a1ff0a)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #a1ff0a)"
+            }
+            else if (pontos == 10) {
+                document.querySelector("#idOut").style.color = "#0aff99"
+                document.querySelector("#idShadow").style.backgroundColor = "#0aff99"
+                document.querySelector("#idShadow").style.width = "100%"
+                document.querySelector("#idShadow").style.filter = "drop-shadow(0 0 5px #0aff99) drop-shadow(0 0 10px #0aff99)"
+                document.querySelector("#idOut").style.filter = "drop-shadow(0 0 2px #0aff99)"
+            }
+        }
+    </script>
+</body>
+</html>
